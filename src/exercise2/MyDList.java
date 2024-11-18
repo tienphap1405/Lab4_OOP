@@ -14,12 +14,7 @@ public class MyDList<E>
         }
         
         public boolean isEmpty(){
-            if (head == null && tail == null && size == 0){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return size == 0;
         }
         
         public int size(){
@@ -27,12 +22,7 @@ public class MyDList<E>
         }
         
         public MyNode<E> getHead(){
-            if(isEmpty()){
-                return null;
-            }
-            else{
-                return head;
-            }
+            return head;
             
         }
         
@@ -81,13 +71,11 @@ public class MyDList<E>
             if(head.equals(tail)){
                 head = null;
                 tail = null;
-                return currentElement;
             }
             
             else{
                 head = head.getNext();
                 head.setPrev(null);
-                
             }
             size -= 1;
             return currentElement;
@@ -103,12 +91,10 @@ public class MyDList<E>
             if (head.equals(tail)){
                 head = null;
                 tail = null;
-                return currentElement;
             }
             else{
                 tail = tail.getPrev();
                 tail.setNext(null);
-             
             }
             size -=1;
             return currentElement;
